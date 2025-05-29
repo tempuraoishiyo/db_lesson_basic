@@ -1,8 +1,8 @@
 Q1
 
-MariaDB [db_lesson]> CREATE TABLE departments;
-ERROR 1113 (42000): A table must have at least 1 column
-MariaDB [db_lesson]>  CREATE TABLE departments(
+CREATE TABLE departments;
+table must have at least 1 column
+CREATE TABLE departments(
      department_id INT unsigned  auto_increment PRIMARY KEY, 
      name VARCHAR(20) NOT null ,
      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
