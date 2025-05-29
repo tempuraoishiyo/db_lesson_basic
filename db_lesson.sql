@@ -94,7 +94,13 @@ MariaDB [db_lesson]>  CREATE TABLE departments(
       Q5
 
 
-      SELECT name,age FROM people WHERE gender=1 ORDER BY age DESC;
+      SELECT 
+      name,age 
+      FROM 
+      people 
+      WHERE gender=1
+       ORDER BY
+        age DESC;
 
 
       Q6
@@ -111,14 +117,35 @@ MariaDB [db_lesson]>  CREATE TABLE departments(
 
       Q7
 
-      SELECT name FROM people WHERE (`gender` = 2 AND `age` BETWEEN 20 AND 29) OR (`gender` = 1 AND `age` BETWEEN 40 AND 49);
+      SELECT
+      name 
+      FROM 
+      people 
+      WHERE 
+      (`gender` = 2 AND `age` BETWEEN 20 AND 29) 
+      OR 
+      (`gender` = 1 AND `age` BETWEEN 40 AND 49);
       
 
       Q8
-      SELECT name age FROM people WHERE department_id = 1 ORDER BY age ASC;
+      SELECT
+      name 
+      age 
+      FROM 
+      people 
+      WHERE 
+      department_id = 1
+      ORDER BY
+       age ASC;
 
       Q9
-      SELECT AVG(age) AS average_age FROM people WHERE department = '2' AND gender = 2;
+      SELECT 
+      AVG(age) AS
+       average_age 
+       FROM 
+       people 
+       WHERE department = '2'
+        AND gender = 2;
 
       Q10
       SELECT 
