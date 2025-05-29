@@ -1,8 +1,8 @@
-Q1
+    Q1
 
-CREATE TABLE departments;
-table must have at least 1 column
-CREATE TABLE departments(
+    CREATE TABLE departments;
+    table must have at least 1 column
+    CREATE TABLE departments(
      department_id INT unsigned  auto_increment PRIMARY KEY, 
      name VARCHAR(20) NOT null ,
      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -11,18 +11,25 @@ CREATE TABLE departments(
     
     Q2
     
-    ALTER TABLE people ADD department_id INT unsigned AFTER email;
+    ALTER TABLE 
+    people 
+    ADD 
+    department_id INT unsigned
+    AFTER
+     email;
     
     Q3
     
-    INSERT INTO departments (name)
+    INSERT INTO 
+     departments (name)
     VALUES
      ('営業'),
      ('開発'),
      ('経理'),
      ('人事'),
      ('情報システム');
-     INSERT INTO people (name,department_id)
+     INSERT INTO 
+      people (name,department_id)
      VALUES
      ('鈴木あみ',1),
      ('田中まい',1),
@@ -46,30 +53,31 @@ CREATE TABLE departments(
       UPDATE people SET email = 'furuta@beyond-works.co.jp' WHERE person_id =16;
 
       
-      UPDATE people SET age = '24' WHERE person_id =7;
-      UPDATE people SET age = '29' WHERE person_id =8;
-      UPDATE people SET age = '27' WHERE person_id =9;
-      UPDATE people SET age = '24' WHERE person_id =10;
-      UPDATE people SET age = '24' WHERE person_id =11;
-      UPDATE people SET age = '30' WHERE person_id =12;
-      UPDATE people SET age = '28' WHERE person_id =13;
-      UPDATE people SET age = '28' WHERE person_id =14;
-      UPDATE people SET age = '27' WHERE person_id =15;
-      UPDATE people SET age = '24' WHERE person_id =16;
+      UPDATE people SET age = 24 WHERE person_id =7;
+      UPDATE people SET age = 29 WHERE person_id =8;
+      UPDATE people SET age = 27 WHERE person_id =9;
+      UPDATE people SET age = 24 WHERE person_id =10;
+      UPDATE people SET age = 24 WHERE person_id =11;
+      UPDATE people SET age = 30 WHERE person_id =12;
+      UPDATE people SET age = 28 WHERE person_id =13;
+      UPDATE people SET age = 28 WHERE person_id =14;
+      UPDATE people SET age = 27 WHERE person_id =15;
+      UPDATE people SET age = 24 WHERE person_id =16;
 
-      UPDATE people SET gender = '2' WHERE person_id =7;
-      UPDATE people SET gender = '2' WHERE person_id =8;
-      UPDATE people SET gender = '2' WHERE person_id =9;
-      UPDATE people SET gender = '2' WHERE person_id =10;
-      UPDATE people SET gender = '2' WHERE person_id =11;
-      UPDATE people SET gender = '2' WHERE person_id =12;
-      UPDATE people SET gender = '2' WHERE person_id =13;
-      UPDATE people SET gender = '2' WHERE person_id =14;
-      UPDATE people SET gender = '2' WHERE person_id =15;
-      UPDATE people SET gender = '2' WHERE person_id =16;
+      UPDATE people SET gender = 2 WHERE person_id =7;
+      UPDATE people SET gender = 2 WHERE person_id =8;
+      UPDATE people SET gender = 2 WHERE person_id =9;
+      UPDATE people SET gender = 2 WHERE person_id =10;
+      UPDATE people SET gender = 2 WHERE person_id =11;
+      UPDATE people SET gender = 2 WHERE person_id =12;
+      UPDATE people SET gender = 2 WHERE person_id =13;
+      UPDATE people SET gender = 2 WHERE person_id =14;
+      UPDATE people SET gender = 2 WHERE person_id =15;
+      UPDATE people SET gender = 2 WHERE person_id =16;
 
 
-      INSERT INTO reports (person_id,content)
+      INSERT INTO 
+      reports (person_id,content)
       VALUES
       (7,'日報11'),
       (8,'日報12'),
@@ -95,10 +103,11 @@ CREATE TABLE departments(
 
 
       SELECT 
-      name,age 
+        name,age 
       FROM 
-      people 
-      WHERE gender=1
+        people 
+      WHERE 
+        gender=1
        ORDER BY
         age DESC;
 
@@ -113,23 +122,24 @@ CREATE TABLE departments(
       ORDER BY
       `created_at`;
 
-      peopleテーブルから、department_idが1のname,email,ageを選択し、created_atを基準に昇順に並べる
+      people（テーブル）から、department_id（カラム）
+      が1のname,email,age（レコード）を取得し、created_at（カラム）を基準に昇順に並べる
 
       Q7
 
       SELECT
-      name 
+       name 
       FROM 
-      people 
+       people 
       WHERE 
-      (`gender` = 2 AND `age` BETWEEN 20 AND 29) 
+       (gender = 2 AND age BETWEEN 20 AND 29) 
       OR 
-      (`gender` = 1 AND `age` BETWEEN 40 AND 49);
+       (gender = 1 AND age BETWEEN 40 AND 49);
       
 
       Q8
       SELECT
-      name 
+      name,
       age 
       FROM 
       people 
@@ -140,12 +150,13 @@ CREATE TABLE departments(
 
       Q9
       SELECT 
-      AVG(age) AS
-       average_age 
+      AVG(age) AS average_age 
        FROM 
        people 
-       WHERE department = '2'
-        AND gender = 2;
+       WHERE
+        department_id = 2
+        AND
+         gender = 2;
 
       Q10
       SELECT 
@@ -177,5 +188,5 @@ CREATE TABLE departments(
       ON
       people.person_id = reports.person_id
       WHERE
-      reports.content
+      reports_id
       IS NULL;
