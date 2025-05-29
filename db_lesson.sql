@@ -1,8 +1,8 @@
 Q1
 
-CREATE TABLE departments;
-table must have at least 1 column
-CREATE TABLE departments(
+MariaDB [db_lesson]> CREATE TABLE departments;
+ERROR 1113 (42000): A table must have at least 1 column
+MariaDB [db_lesson]>  CREATE TABLE departments(
      department_id INT unsigned  auto_increment PRIMARY KEY, 
      name VARCHAR(20) NOT null ,
      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -94,13 +94,7 @@ CREATE TABLE departments(
       Q5
 
 
-      SELECT 
-      name,age 
-      FROM 
-      people 
-      WHERE gender=1
-       ORDER BY
-        age DESC;
+      SELECT name,age FROM people WHERE gender=1 ORDER BY age DESC;
 
 
       Q6
@@ -117,35 +111,14 @@ CREATE TABLE departments(
 
       Q7
 
-      SELECT
-      name 
-      FROM 
-      people 
-      WHERE 
-      (`gender` = 2 AND `age` BETWEEN 20 AND 29) 
-      OR 
-      (`gender` = 1 AND `age` BETWEEN 40 AND 49);
+      SELECT name FROM people WHERE (`gender` = 2 AND `age` BETWEEN 20 AND 29) OR (`gender` = 1 AND `age` BETWEEN 40 AND 49);
       
 
       Q8
-      SELECT
-      name 
-      age 
-      FROM 
-      people 
-      WHERE 
-      department_id = 1
-      ORDER BY
-       age ASC;
+      SELECT name age FROM people WHERE department_id = 1 ORDER BY age ASC;
 
       Q9
-      SELECT 
-      AVG(age) AS
-       average_age 
-       FROM 
-       people 
-       WHERE department = '2'
-        AND gender = 2;
+      SELECT AVG(age) AS average_age FROM people WHERE department = '2' AND gender = 2;
 
       Q10
       SELECT 
